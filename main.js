@@ -4,12 +4,12 @@ const path = require("path");
 const express = require("express");
 
 // Start local server to get WASM file. Maybe there is a better way to do this
-// const exApp = express();
-// exApp.use(express.static(__dirname + "/wasm"));
-// exApp.listen(3000);
+const exApp = express();
+exApp.use(express.static(__dirname + "/wasm"));
+exApp.listen(3000);
 
-const fs = require("fs");
-WebAssembly.instantiate(fs.readFileSync("./wasm/web-ifc.wasm"));
+// const fs = require("fs");
+// WebAssembly.instantiate(fs.readFileSync("./wasm/web-ifc.wasm"));
 
 let mainWindow;
 function createWindow() {
